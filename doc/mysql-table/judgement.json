@@ -1,0 +1,10 @@
+{
+    "id":"bigint",
+    "judgetment_code":"varchar(36)",
+    "question_code":"varchar(36)",
+    "user_code":"varchar(36)",
+    "result_judgement":"char(1)",
+    "note":"text",
+    "create_at":"datetime",
+    "update_at":"datetime"
+}

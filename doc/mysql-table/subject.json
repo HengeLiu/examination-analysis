@@ -1,0 +1,9 @@
+{
+    "id":"bigint",
+    "subject_code":"varchar(36)",
+    "name":"varchar(30)",
+    "desc":"varchar(100)",
+    "create_at":"datetime",
+    "update_at":"datetime",
+    "is_del":"tinyint"
+}

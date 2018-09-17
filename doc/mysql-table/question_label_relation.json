@@ -1,0 +1,7 @@
+{
+    "id":"bigint",
+    "question_code":"char(36)",
+    "label_code":"char(36)",
+    "create_at":"datetime",
+    "update_at":"datetime"
+}

@@ -1,0 +1,10 @@
+{
+    "id":"bigint",
+    "label_code":"char(36)",
+    "name":"char(5)",
+    "desc":"varcahr(100)",
+    "course_code":"char(36)",
+    "create_at":"datetime",
+    "update_at":"datetime",
+    "is_del":"tinyint"
+}
