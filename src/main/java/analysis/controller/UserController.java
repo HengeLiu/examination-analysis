@@ -1,8 +1,10 @@
 package analysis.controller;
 
+import analysis.dto.UserDTO;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * 反欺诈接口数据实体类
@@ -15,15 +17,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/user")
 public class UserController {
 
-    @RequestMapping("/show")
-    @ResponseBody
-    public String showTest(){
-        return "hello";
+    @GetMapping("/")
+    public String dashboard(){
+        return "dashboard";
     }
 
-    @RequestMapping("/login")
+    @GetMapping(value = "/login")
     public String login(){
-        return "signup/login";
+        return "login";
     }
 
+    @PostMapping(value = "/login")
+    public String login(final UserDTO userDTO,final HttpSession session){
+
+        return "dashboard";
+    }
 }
