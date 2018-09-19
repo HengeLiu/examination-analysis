@@ -14,7 +14,6 @@ import java.io.IOException;
  * @auther elio
  * @date 2018/9/18
  */
-@Service
 public class SigninInterceptor extends HandlerInterceptorAdapter {
 
     private static final String USER_SEESION_KEY = "user_key";

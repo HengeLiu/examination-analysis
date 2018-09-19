@@ -1,6 +1,6 @@
 package analysis.controller;
 
-import analysis.dto.UserDTO;
+import analysis.dto.UserDO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,8 +13,8 @@ import javax.servlet.http.HttpSession;
  * @version 1.0
  * @since 2018/09/18
  */
-@Controller
-@RequestMapping("/user")
+//@Controller
+//@RequestMapping("/user")
 public class UserController {
 
     @GetMapping("/")
@@ -27,8 +27,8 @@ public class UserController {
         return "login";
     }
 
-    @PostMapping(value = "/login")
-    public String login(final UserDTO userDTO,final HttpSession session){
+    @PostMapping(value = "/dashboard")
+    public String login(final UserDO userDO,final HttpSession session){
 
         return "dashboard";
     }

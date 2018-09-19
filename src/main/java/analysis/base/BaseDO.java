@@ -10,9 +10,9 @@ import java.util.Date;
  * @date 2018/9/18
  */
 @Data
-public class BaseDTO {
+public class BaseDO {
     private Long id;
     private Date createAt;
     private Date updateAt;
-    private int isDel;
+    private Byte isDel;
 }
