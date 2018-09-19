@@ -13,13 +13,12 @@ import javax.servlet.http.HttpSession;
  * @version 1.0
  * @since 2018/09/18
  */
-//@Controller
-//@RequestMapping("/user")
+@Controller
 public class UserController {
 
     @GetMapping("/")
-    public String dashboard(){
-        return "dashboard";
+    public String home(){
+        return "login";
     }
 
     @GetMapping(value = "/login")
@@ -27,9 +26,9 @@ public class UserController {
         return "login";
     }
 
-    @PostMapping(value = "/dashboard")
-    public String login(final UserDO userDO,final HttpSession session){
-
+    @GetMapping("/dashboard")
+    public String dashboard(){
         return "dashboard";
     }
+
 }

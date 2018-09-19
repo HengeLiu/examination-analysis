@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,15 +21,17 @@
 
 <body background="/static/images/background.jpg">
 
-<div th:if="${param.error}">
-    Invalid username and password.
-</div>
+<!--/* Workaround for bug https://youtrack.jetbrains.com/issue/IDEA-132738 -->
+
 <div th:if="${param.logout}">
     You have been logged out.
 </div>
 <div class="container" style="margin-top:5%;">
     <form class="form-signin" id="login-form" th:action="@{/login}" method="post">
         <h2 class="form-signin-heading" style="color:white">请登录</h2>
+        <p th:if="${param.error}" style="color: crimson;">
+            用户名或密码错误
+        </p>
         <label for="inputName" class="sr-only">Name</label>
         <input type="name" id="inputName" class="form-control" placeholder="用户名" required name="name" autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
