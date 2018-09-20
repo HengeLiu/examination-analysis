@@ -36,7 +36,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/").permitAll()
+                .antMatchers("/","/test").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -52,13 +52,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        //admin
         auth.inMemoryAuthentication().withUser("admin").password("{MD5}21232f297a57a5a743894a0e4a801fc3").roles("USER");
+        //meiyi123456
+        auth.inMemoryAuthentication().withUser("meiyi").password("{MD5}3843fcab4eb1a84f302f23a49d5faf98").roles("USER");
+        //developer
+        auth.inMemoryAuthentication().withUser("elio").password("{MD5}5e8edd851d2fdfbd7415232c67367cc3").roles("USER");
     }
 
 
-    @Bean
-    public UserDetailsService userDetailsService(){
-        return new UserServiceImpl();
-    }
+//    @Bean
+//    public UserDetailsService userDetailsService(){
+//        return new UserServiceImpl();
+//    }
 
 }

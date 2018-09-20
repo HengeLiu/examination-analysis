@@ -21,9 +21,14 @@ public class UserController {
         return "login";
     }
 
-    @GetMapping(value = "/login")
+    @GetMapping("/login")
     public String login(){
         return "login";
+    }
+
+    @GetMapping("/test")
+    public String test(){
+        return "test";
     }
 
     @GetMapping("/dashboard")
