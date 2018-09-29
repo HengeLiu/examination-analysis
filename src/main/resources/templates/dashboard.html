@@ -14,10 +14,20 @@
   <script src="/static/assets/js/ie-emulation-modes-warning.js"></script>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <style>
+    #include-page {
+      position: absolute;
+      left: 233.75px;
+      top: 160px;
+    }
+    #single-page {
+      padding: 10px;
+    }
+  </style>
 </head>
 
 <body>
-
+<!-- 上浮导航栏 -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -42,26 +52,48 @@
 </nav>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-3 col-md-2 sidebar">
-      <ul class="nav nav-sidebar">
-        <li class="active"><a href="#"><h4>欢迎</h4><span class="sr-only">(current)</span></a></li>
+    <!-- 侧边导航栏 -->
+    <div id="left-nav" class="col-sm-3 col-md-2 sidebar menu-change panel-group">
+      <ul class="nav nav-sidebar child-menu panel">
+        <li class=""><a href="#welcome" data-toggle="collapse" data-parent="#left-nav" class="collapsed" aria-expanded="false"><h4>欢迎</h4></a></li>
+        <ul class="collapsed collapse" aria-expanded="false" id="welcome" style="height: 0px;">
+          <li id="logout" class="list-unstyled"><a class="a-page"><h4 class="">LOGOUT</h4></a></li>
+        </ul>
       </ul>
-      <ul class="nav nav-sidebar">
-        <li class=""><a href="#"><h4>题库</h4><span class="sr-only">(current)</span></a></li>
+      <ul class="nav nav-sidebar child-menu panel">
+        <li class=""><a href="#examination-names" data-toggle="collapse" data-parent="#left-nav" class="collapsed" aria-expanded="false"><h4>题库</h4></a></li>
+        <ul class="collapsed collapse" aria-expanded="false" id="examination-names" style="height: 0px;">
+          <li class="list-unstyled"><a class="a-page"><h4 class="">MBA</h4></a></li>
+          <li class="list-unstyled"><a class="a-page"><h4 class="">TEST</h4></a></li>
+        </ul>
       </ul>
-      <ul class="nav nav-sidebar">
-        <li><a href=""><h4>分析</h4></a></li>
+      <ul class="nav nav-sidebar child-menu panel">
+        <li class=""><a href="#analysis-type" data-toggle="collapse" data-parent="#left-nav" class="collapsed" aria-expanded="false"><h4>分析</h4></a></li>
+        <ul class="collapsed collapse" aria-expanded="false" id="analysis-type" style="height: 0px;">
+          <li class="list-unstyled"><a class="a-page" url="test"><h4 class="">COLUMN</h4></a></li>
+          <li class="list-unstyled"><a class="a-page"><h4 class="">RADAR</h4></a></li>
+        </ul>
       </ul>
     </div>
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-      <h1 class="page-header">欢迎</h1>
+    <!-- 工具栏 -->
+    <div id="tool-box">
+
     </div>
-</div>
+    <!-- 内嵌页面 -->
+    <div id="include-page">
+      <div id="single-page">
+
+      </div>
+    </div>
+  </div>
 <script src="/static/js/jquery-3.3.1.min.js"></script>
 <script>window.jQuery || document.write(
     '<script src="/static/assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script src="/static/js/bootstrap.min.js"></script>
 <script src="/static/assets/js/vendor/holder.min.js"></script>
 <script src="/static/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="/static/js/menu-change.js"></script>
+<script src="/static/js/loadpage.js"></script>
+</div>>
 </body>
 </html>

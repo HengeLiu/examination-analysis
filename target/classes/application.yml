@@ -11,13 +11,26 @@ spring:
     view:
       suffix: .html
       prefix: /
-  datasource:
-    url: jdbc:mysql://59.110.229.77:3306/examination-analysis?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-    username: root
-    password: MARIA123456
-    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    cache: false
+
+datasource:
+  url: jdbc:mysql://59.110.229.77:3306/examination-analysis?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+  username: root
+  password: MARIA123456
+  driver-name: com.mysql.jdbc.Driver
+  initial-size: 2
+  minimum-size: 2
+  maximum-size: 20
+  maximum-wait: 30000
 
 server:
   tomcat:
     uri-encoding: UTF-8
   port: 80
+
+logging:
+  level:
+    org:
+      springframwork:
+        security: INFO
